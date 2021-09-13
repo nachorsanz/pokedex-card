@@ -18,8 +18,6 @@ function PokemonCard({ data }) {
         }
     }, [data]);
     const imgUrl = uniquePokemon?.sprites?.front_default;
-    const ability1 = uniquePokemon?.abilities[0]?.ability.name;
-    const ability2 = uniquePokemon?.abilities[1]?.ability.name;
     const experience = uniquePokemon?.base_experience;
 
     return (
@@ -39,7 +37,9 @@ function PokemonCard({ data }) {
                 </div>
                 <div className="infoPokemon">
                     <span>
-                        {ability1}, {ability2}
+                        {uniquePokemon?.abilities.map((data) => (
+                            <span>{data.ability.name}</span>
+                        ))}
                     </span>
                 </div>
             </div>

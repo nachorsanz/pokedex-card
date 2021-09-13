@@ -19,9 +19,10 @@ function PokedexBox() {
     return (
         <StyledPokedexBox>
             <div className="table">
-                {pokemons?.map((data) => (
-                    <PokemonCard key={data.url} data={data} />
-                ))}
+                {pokemons &&
+                    pokemons?.map((data) => (
+                        <PokemonCard key={data.url} data={data} />
+                    ))}
             </div>
         </StyledPokedexBox>
     );
